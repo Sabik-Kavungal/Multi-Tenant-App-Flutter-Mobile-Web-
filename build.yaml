@@ -1,0 +1,47 @@
+targets:
+  $default:
+    sources:
+      - lib/**
+      - $package$
+    builders:
+      source_gen:combining_builder:
+        options:
+          build_extensions:
+            '^lib/features/auth/models/{{}}.dart': 'lib/features/auth/models/gen/{{}}.g.dart'
+            '^lib/features/tenant/models/{{}}.dart': 'lib/features/tenant/models/gen/{{}}.g.dart'
+            '^lib/features/customer/models/{{}}.dart': 'lib/features/customer/models/gen/{{}}.g.dart'
+            '^lib/features/booking/models/{{}}.dart': 'lib/features/booking/models/gen/{{}}.g.dart'
+            '^lib/features/queue/models/{{}}.dart': 'lib/features/queue/models/gen/{{}}.g.dart'
+            '^lib/features/payment/models/{{}}.dart': 'lib/features/payment/models/gen/{{}}.g.dart'
+            '^lib/features/analytics/models/{{}}.dart': 'lib/features/analytics/models/gen/{{}}.g.dart'
+            '^lib/features/catalog/models/{{}}.dart': 'lib/features/catalog/models/gen/{{}}.g.dart'
+      
+      freezed:
+        options:
+          build_extensions:
+            '^lib/features/auth/models/{{}}.dart': 'lib/features/auth/models/gen/{{}}.freezed.dart'
+            '^lib/features/tenant/models/{{}}.dart': 'lib/features/tenant/models/gen/{{}}.freezed.dart'
+            '^lib/features/customer/models/{{}}.dart': 'lib/features/customer/models/gen/{{}}.freezed.dart'
+            '^lib/features/booking/models/{{}}.dart': 'lib/features/booking/models/gen/{{}}.freezed.dart'
+            '^lib/features/queue/models/{{}}.dart': 'lib/features/queue/models/gen/{{}}.freezed.dart'
+            '^lib/features/payment/models/{{}}.dart': 'lib/features/payment/models/gen/{{}}.freezed.dart'
+            '^lib/features/analytics/models/{{}}.dart': 'lib/features/analytics/models/gen/{{}}.freezed.dart'
+            '^lib/features/catalog/models/{{}}.dart': 'lib/features/catalog/models/gen/{{}}.freezed.dart'
+          union_key: 'type'
+          union_value_case: 'none'
+      
+      json_serializable:
+        options:
+          any_map: false
+          checked: false
+          constructor: ""
+          create_factory: true
+          create_field_map: false
+          create_per_field_to_json: false
+          create_to_json: true
+          disallow_unrecognized_keys: false
+          explicit_to_json: true
+          field_rename: none
+          generic_argument_factories: false
+          ignore_unannotated: false
+          include_if_null: false
